@@ -1,0 +1,32 @@
+///////////////////////////////////////////////////////////////////////////
+
+                              Reflection
+                             Workshop - #1
+Full Name  : utsav gautam
+Student ID#: 157891219
+Email      : ugautam4@myseneca.ca
+Section    : ZCC
+
+Authenticity Declaration:
+
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. What you have learned in completing this workshop.
+-> I have learnt to install visual studio in my local computer create a C project using visual studio. Write code in 
+   C programming language use printf statement, new lines escape sequence, tabs. Connect to matrix server using SSH and 
+   transfer files from local computer to matrix server using SFTP. Compile and execute the C program and make a submission
+   of the workshops using matrix. 
+
+2. Briefly describe what SSH is and how you used it in this workshop.
+-> SSH (Secure Shell Protocal) is a network protocal which gives a secure way to access a computer over an unsecured network.
+   In the workshop I used SSH to connect to the matrix server securely using ssh username@matrix.senecacollege.ca and perform 
+   my workshops submission on the matrix server. 
+
+3. Briefly describe what SFTP is and how you used it in this workshop.
+-> SFTP (Secure File Transfer Protocal) is a file transfer protocal that uses shell encryption and provides high level of
+   security to send and recieve files from one computer to another. I used SFTP to transfer my workshop source code from my 
+   computer over to matrix server using FileZilla application which is a secure way to transefer files.
+
