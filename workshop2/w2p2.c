@@ -86,7 +86,7 @@ int main(void)
     printf("-------- ---- ----- --- --------- --------- ---------\n");
 
     // calculation of the final values
-    finalSubTotal = (patSubTotal + 0.0) / 100 +  (salSubTotal + 0.0) / 100 + (tomSubTotal = 0.0) / 100;
+    finalSubTotal = (patSubTotal + 0.0)   +  (salSubTotal + 0.0)   + (tomSubTotal + 0.0) ;
     finalTax = patTax + salTax + tomTax;
     finalTotal = patGrandTotal+ salGrandTotal + tomGrandTotal;
 
