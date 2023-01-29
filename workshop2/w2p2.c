@@ -1,6 +1,6 @@
 /*/////////////////////////////////////////////////////////////////////////
                           Workshop - #2 (P1)
-Full Name  : utsav gautam   
+Full Name  : utsav gautam
 Student ID#: 157891219
 Email      : ugautam4@myseneca.com
 Section    : ZCC
@@ -20,126 +20,166 @@ int main(void)
 {
     const double TAX = 0.13;
     const char patSize = 'S', salSize = 'M', tomSize = 'L';
-    // variables 
-    double smallShirtPrice, mediumShirtPrice, largeShirtPrice; 
+    // variables needed initiated below
+
+    // declare variable and set to a safe state
+    double smallShirtPrice = 0.0, mediumShirtPrice = 0.0, largeShirtPrice = 0.0;
+
     int patQty, salQty, tomQty;
-    int patSubTotal, salSubTotal, tomSubTotal, patTax, salTax, tomTax, patGrandTotal, salGrandTotal, tomGrandTotal; 
-    int finalTotal, finalTax, finalSubTotal; 
-    double finalSubAvg = 0, finalTotalAvg =0, subShirtPatty = 0, subShirtSal = 0, subShirtTom = 0; 
+    int smallSubTotalcent = 0, medSubTotalCent = 0, largeSubTotalCent;
+    int taxesForSmall = 0, taxesForMedim = 0, taxesForLarge = 0;
+    int smallFinalTotal = 0, mediumFinalTotal = 0, largeFinalTotal = 0;
+    int finalSubtotalCents = 0, taxesTotal = 0, finalTotalPrice = 0;
+    int val = 0, change = 0, averagePrice = 0;
 
-    // displaying to the user
-    printf("Set Shirt Prices\n"); 
-    printf("================\n"); 
-    printf("Enter the price for a SMALL shirt: $"); 
-    scanf("%lf",&smallShirtPrice); 
-    printf("Enter the price for a MEDIUM shirt: $"); 
-    scanf("%lf",&mediumShirtPrice); 
-    printf("Enter the price for a LARGE shirt: $"); 
-    scanf("%lf",&largeShirtPrice); 
-    printf("\n"); 
+    // displaying and getting input from user
+    printf("Set Shirt Prices\n");
+    printf("================\n");
+    printf("Enter the price for a SMALL shirt: $");
+    scanf("%lf", &smallShirtPrice);
+    printf("Enter the price for a MEDIUM shirt: $");
+    scanf("%lf", &mediumShirtPrice);
+    printf("Enter the price for a LARGE shirt: $");
+    scanf("%lf", &largeShirtPrice);
+    printf("\n");
 
-    printf("Shirt Store Price List\n"); 
-    printf("======================\n"); 
-    printf("SMALL  :$%.2lf\n",smallShirtPrice);
-    printf("MEDIUM :$%.2lf\n",mediumShirtPrice); 
-    printf("LARGE  :$%.2lf\n\n",largeShirtPrice); 
+    // Display the input in format
+    printf("Shirt Store Price List\n");
+    printf("======================\n");
+    printf("SMALL  :$%.2lf\n", smallShirtPrice);
+    printf("MEDIUM :$%.2lf\n", mediumShirtPrice);
+    printf("LARGE  :$%.2lf\n\n", largeShirtPrice);
 
-    // for patty 
-    printf("Patty's shirt size is \'%c\'\n",patSize); 
+    // taking patty's input
+    printf("Patty's shirt size is \'%c\'\n", patSize);
     printf("Number of shirts Patty is buying: ");
-    scanf("%d",&patQty);
-    printf("\n"); 
-    
-    // patty's calculations 
-    patSubTotal = smallShirtPrice * 100 * patQty;
-    patTax = patSubTotal * TAX + 0.5;
-    patGrandTotal = patSubTotal + patTax;
+    scanf("%d", &patQty);
+    printf("\n");
 
-    // for tommy 
-    printf("Tommy's shirt size is \'%c\'\n",tomSize); 
+    // taking tommy's input
+    printf("Tommy's shirt size is \'%c\'\n", tomSize);
     printf("Number of shirts Tommy is buying: ");
-    scanf("%d",&tomQty);
-    printf("\n"); 
-    
-    //tommy's calculations 
-    tomSubTotal = largeShirtPrice * 100 * tomQty; 
-    tomTax = tomSubTotal * TAX + 0.5; 
-    tomGrandTotal = tomSubTotal + tomTax; 
-     
-    // for sally 
-    printf("Sally's shirt size is \'%c\'\n",salSize); 
+    scanf("%d", &tomQty);
+    printf("\n");
+
+    //  taking sally's input
+    printf("Sally's shirt size is \'%c\'\n", salSize);
     printf("Number of shirt Sally is buying: ");
-    scanf("%d", &salQty); 
-    printf("\n"); 
+    scanf("%d", &salQty);
+    printf("\n");
 
-    // sally calculations 
-    salSubTotal = mediumShirtPrice * 100 * salQty; 
-    salTax = salSubTotal * TAX + 0.5; 
-    salGrandTotal = salSubTotal + salTax; 
+    // converting the subtotal into cents
+    // calculation done by quantity multiplied by shirt prices and multiplying with 100
+    smallSubTotalcent = (patQty * smallShirtPrice) * 100;
+    medSubTotalCent = (salQty * mediumShirtPrice) * 100;
+    largeSubTotalCent = (tomQty * largeShirtPrice) * 100;
 
-    // display to the user 
+    // here all of the prices have been converted to cents by multipying with 100
+
+    // calcualation of tax rate for all
+    taxesForSmall = smallSubTotalcent * TAX + 0.5;
+    taxesForMedim = medSubTotalCent * TAX + 0.5;
+    taxesForLarge = largeSubTotalCent * TAX + 0.5;
+
+    // Here we calculate the total
+    // can be calculated as converted cents + taxes for all the sizes
+    smallFinalTotal = smallSubTotalcent + taxesForSmall;
+    mediumFinalTotal = medSubTotalCent + taxesForMedim;
+    largeFinalTotal = largeSubTotalCent + taxesForLarge;
+
+    // final sum calculations
+    finalSubtotalCents = smallSubTotalcent + medSubTotalCent + largeSubTotalCent;
+    taxesTotal = taxesForSmall + taxesForMedim + taxesForLarge;
+    finalTotalPrice = finalSubtotalCents + taxesTotal;
+
+    // display to the user
     printf("Customer Size Price Qty Sub-Total       Tax     Total\n");
     printf("-------- ---- ----- --- --------- --------- ---------\n");
-    printf("Patty    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", patSize, smallShirtPrice, patQty, (patSubTotal + 0.0) / 100, (patTax + 0.0) / 100, (patGrandTotal + 0.0) / 100);
-    printf("Sally    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", salSize, mediumShirtPrice, salQty,(salSubTotal + 0.0) / 100, (salTax + 0.0) / 100, (salGrandTotal + 0.0) / 100);
-    printf("Tommy    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", tomSize, largeShirtPrice, tomQty, (tomSubTotal + 0.0) / 100, (tomTax + 0.0) / 100, (tomGrandTotal + 0.0) / 100);
+    printf("Patty    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", patSize, smallShirtPrice, patQty, ((double)smallSubTotalcent / 100), ((double)taxesForSmall / 100), ((double)smallFinalTotal / 100));
+    printf("Sally    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", salSize, mediumShirtPrice, salQty, ((double)medSubTotalCent / 100), ((double)taxesForMedim / 100), ((double)mediumFinalTotal / 100));
+    printf("Tommy    %-4c %5.2lf %3d %9.4lf %9.4lf %9.4lf\n", tomSize, largeShirtPrice, tomQty, ((double)largeSubTotalCent / 100), ((double)taxesForLarge / 100), ((double)largeFinalTotal / 100));
+
     printf("-------- ---- ----- --- --------- --------- ---------\n");
 
-    // calculation of the final values
-    finalSubTotal = (patSubTotal + 0.0)   +  (salSubTotal + 0.0)   + (tomSubTotal + 0.0) ;
-    finalTax = patTax + salTax + tomTax;
-    finalTotal = patGrandTotal+ salGrandTotal + tomGrandTotal;
+    printf("%33.4lf %9.4lf %9.4lf\n\n", ((double)finalSubtotalCents / 100), ((double)taxesTotal / 100), ((double)finalTotalPrice / 100));
 
-    printf("                         %8.4lf  %8.4lf  %8.4lf\n", finalSubTotal / 100.0, finalTax / 100.0, finalTotal / 100.0);
-    printf("\n"); 
+    printf("\n");
 
-    printf("Daily retail sales represented by coins\n"); 
+    printf("Daily retail sales represented by coins\n");
     printf("=======================================\n\n");
-    
+
     printf("Sales EXCLUDING tax\n");
-    printf("Coin     Qty   Balance\n");
+    printf("change     Qty   Balance\n");
     printf("-------- --- ---------\n");
-    printf("%22.4lf\n", finalSubTotal/100.0);
-    printf("Toonies  %3d %9.4lf\n", finalSubTotal / 200, (finalSubTotal % 200) / 100.0);
-    finalSubTotal %= 200;
-    printf("Loonies  %3d %9.4lf\n", finalSubTotal / 100, (finalSubTotal % 100) / 100.0);
-    finalSubTotal %= 100;
-    printf("Quarters %3d %9.4lf\n", finalSubTotal / 25, (finalSubTotal % 25) / 100.0);
-    finalSubTotal %= 25;
-    printf("Dimes    %3d %9.4lf\n", finalSubTotal / 10, (finalSubTotal % 10) / 100.0);
-    finalSubTotal %= 10;
-    printf("Nickels  %3d %9.4lf\n", finalSubTotal / 5, (finalSubTotal % 5) / 100.0);
-    finalSubTotal %= 5;
-    printf("Pennies  %3d %9.4lf\n\n", finalSubTotal / 1, (finalSubTotal % 1) / 100.0);
-    finalSubTotal %= 1;
+    printf("              %.4lf\n", (double)finalSubtotalCents / 100);
 
-    finalSubAvg = (patSubTotal + salSubTotal + tomSubTotal) / 100.0;
-    subShirtPatty = patQty;
-    subShirtSal = salQty; 
-    subShirtTom = tomQty; 
+    // Calculation of change
+    val = finalSubtotalCents;
+    change = val / 200;
+    val %= 200;
+    printf("Toonies  %d    %.4lf\n", change, (double)val / 100);
 
-    printf("Average cost/shirt: $%.4lf\n\n", finalSubAvg / (subShirtPatty + subShirtSal + subShirtTom));
-    
+    change = val / 100;
+    val %= 100;
+    printf("Loonies    %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 25;
+    val %= 25;
+    printf("Quarters   %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 10;
+    val %= 10;
+    printf("Dimes      %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 5;
+    val %= 5;
+    printf("Nickels    %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 1;
+    val %= 1;
+    printf("Pennies    %d    %.4lf\n\n", change, (double)val / 100);
+
+    // calculating the average price
+    averagePrice = ((((double)(finalSubtotalCents) / (patQty + salQty + tomQty)) + 0.005) * 100);
+
+    printf("Average cost/shirt: $%.4lf\n\n", (double)averagePrice / 10000);
+
+    // calculating all the prices including the fees
+
     printf("Sales INCLUDING tax\n");
-    printf("Coin     Qty   Balance\n");
+    printf("change     Qty   Balance\n");
     printf("-------- --- ---------\n");
-    printf("%22.4lf\n", finalTotal / 100.0);
-    printf("Toonies  %3d %9.4lf\n", finalTotal / 200, (finalTotal % 200) / 100.0);
-    finalTotal %= 200;
-    printf("Loonies  %3d %9.4lf\n", finalTotal / 100, (finalTotal % 100) / 100.0);
-    finalTotal %= 100;
-    printf("Quarters %3d %9.4lf\n", finalTotal / 25, (finalTotal % 25) / 100.0);
-    finalTotal %= 25;
-    printf("Dimes    %3d %9.4lf\n", finalTotal / 10, (finalTotal % 10) / 100.0);
-    finalTotal %= 10;
-    printf("Nickels  %3d %9.4lf\n", finalTotal / 5, (finalTotal % 5) / 100.0);
-    finalTotal %= 5;
-    printf("Pennies  %3d %9.4lf\n\n", finalTotal / 1, (finalTotal % 1) / 100.0);
-    finalTotal %= 1;
 
-    finalTotalAvg = (patGrandTotal + salGrandTotal + tomGrandTotal) / 100.0;
-    printf("Average cost/shirt: $%2.4f", finalTotalAvg / (subShirtPatty + subShirtSal + subShirtTom));
+    printf("              %.4lf\n", (double)finalTotalPrice / 100);
 
-return 0; 
+    val = finalTotalPrice;
+    change = val / 200;
+    val %= 200;
+    printf("Toonies  %d    %.4lf\n", change, (double)val / 100);
 
+    change = val / 100;
+    val %= 100;
+    printf("Loonies    %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 25;
+    val %= 25;
+    printf("Quarters   %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 10;
+    val %= 10;
+    printf("Dimes      %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 5;
+    val %= 5;
+    printf("Nickels    %d    %.4lf\n", change, (double)val / 100);
+
+    change = (int)val / 1;
+    val %= 1;
+    printf("Pennies    %d    %.4lf\n\n", change, (double)val / 100);
+
+    averagePrice = ((((double)(finalTotalPrice) / (patQty + salQty + tomQty)) + 0.005) * 100);
+
+    printf("Average cost/shirt: $%.4lf\n\n", (double)averagePrice / 10000);
+
+    return 0;
 }
