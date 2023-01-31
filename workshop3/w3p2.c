@@ -91,33 +91,65 @@ int main(void)
 
     printf("The below table shows how your preferences align to the available products:\n\n");
 
-    printf("--------------------+-------------+-------+\n");
-    printf("  |     Coffee      |  Packaged   |  With |\n");
-    printf("ID|      Type       | Bag Weight  |  Cream|\n");
-    printf("--+-----------------+-------------+-------+\n");
-    printf(" 1|       %d         |      %d      |   %d   |\n", (strengthOfCoffee == 'L') || (strengthOfCoffee == 'l'), numOfServings >= 1 && numOfServings <= 4, likeCream != 'n' || likeCream != 'N');
+       printf("--------------------+-------------+-------+\n");
+       printf("  |     Coffee      |  Packaged   |  With |\n");
+       printf("ID|      Type       | Bag Weight  |  Cream|\n");
+       printf("--+-----------------+-------------+-------+\n");
+       printf(" 1|       %d         |      %d      |   %d   |\n", ((((oneCoffeeType == 'L' || oneCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((oneCoffeeType == 'M' || oneCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((oneCoffeeType == 'R' || oneCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((oneBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((oneBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((oneBagWeight == 1000) && (numOfServings >= 10))),
+              (((oneServeType == 'Y' || oneServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((oneServeType == 'N' || oneServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
 
-    printf(" 2|       %d         |      %d      |   %d   |\n", (strengthOfCoffee == 'M') || (strengthOfCoffee == 'm'), numOfServings >= 5 && numOfServings <= 9, likeCream == 'n' || likeCream == 'N');
+       printf(" 2|       %d         |      %d      |   %d   |\n", ((((twoCoffeeType == 'L' || twoCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((twoCoffeeType == 'M' || twoCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((twoCoffeeType == 'R' || twoCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((twoBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((twoBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((twoBagWeight == 1000) && (numOfServings >= 10))),
+              (((twoServeType == 'Y' || twoServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((twoServeType == 'N' || twoServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
 
-    printf(" 3|       %d         |      %d      |   %d   |\n\n", (strengthOfCoffee == 'R') || (strengthOfCoffee == 'r'), numOfServings >= 10, likeCream == 'n' || likeCream == 'N');
+       printf(" 3|       %d         |      %d      |   %d   |\n", ((((threeCoffeeType == 'L' || threeCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((threeCoffeeType == 'M' || threeCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((threeCoffeeType == 'R' || threeCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((threeBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((threeBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((threeBagWeight == 1000) && (numOfServings >= 10))),
+              (((threeServeType == 'Y' || threeServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((threeServeType == 'N' || threeServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
 
-    printf("Enter how you like your coffee...\n\n");
+       printf("Enter how you like your coffee...\n\n");
 
-    printf("Coffee strength ([L]ight, [M]edium, [R]ich): ");
-    scanf(" %c", &strengthOfCoffee);
-    printf("Do you like your coffee with cream ([Y]es,[N]o): ");
-    scanf(" %c", &likeCream);
-    printf("Typical number of daily servings: ");
-    scanf("%d", &numOfServings);
-    printf("\n");
+       printf("Coffee strength ([L]ight, [M]edium, [R]ich): ");
+       scanf(" %c", &strengthOfCoffee);
+       printf("Do you like your coffee with cream ([Y]es,[N]o): ");
+       scanf(" %c", &likeCream);
+       printf("Typical number of daily servings: ");
+       scanf("%d", &numOfServings);
+       printf("\n");
 
-    printf("--------------------+-------------+-------+\n");
-    printf("  |     Coffee      |  Packaged   |  With |\n");
-    printf("ID|      Type       | Bag Weight  |  Cream|\n");
-    printf("--+-----------------+-------------+-------+\n");
-    printf(" 1|       %d         |      %d      |   %d   |\n", (strengthOfCoffee == 'L') || (strengthOfCoffee == 'l'), numOfServings >= 1 && numOfServings <= 4, likeCream == 'Y' || likeCream == 'y');
-    printf(" 2|       %d         |      %d      |   %d   |\n", (strengthOfCoffee == 'M') || (strengthOfCoffee == 'm'), numOfServings >= 5 && numOfServings <= 9, likeCream == 'n' || likeCream == 'N');
-    printf(" 3|       %d         |      %d      |   %d   |\n\n", (strengthOfCoffee == 'R') || (strengthOfCoffee == 'r'), numOfServings >= 10, likeCream == 'n' || likeCream == 'N');
+       printf("--------------------+-------------+-------+\n");
+       printf("  |     Coffee      |  Packaged   |  With |\n");
+       printf("ID|      Type       | Bag Weight  |  Cream|\n");
+       printf("--+-----------------+-------------+-------+\n");
+       printf(" 1|       %d         |      %d      |   %d   |\n", ((((oneCoffeeType == 'L' || oneCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((oneCoffeeType == 'M' || oneCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((oneCoffeeType == 'R' || oneCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((oneBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((oneBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((oneBagWeight == 1000) && (numOfServings >= 10))),
+              (((oneServeType == 'Y' || oneServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((oneServeType == 'N' || oneServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
 
-    return 0;
+       printf(" 2|       %d         |      %d      |   %d   |\n", ((((twoCoffeeType == 'L' || twoCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((twoCoffeeType == 'M' || twoCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((twoCoffeeType == 'R' || twoCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((twoBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((twoBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((twoBagWeight == 1000) && (numOfServings >= 10))),
+              (((twoServeType == 'Y' || twoServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((twoServeType == 'N' || twoServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
+
+       printf(" 3|       %d         |      %d      |   %d   |\n", ((((threeCoffeeType == 'L' || threeCoffeeType == 'l') && (strengthOfCoffee == 'L' || strengthOfCoffee == 'l')) || ((threeCoffeeType == 'M' || threeCoffeeType == 'm') && (strengthOfCoffee == 'M' || strengthOfCoffee == 'm')) || ((threeCoffeeType == 'R' || threeCoffeeType == 'r') && (strengthOfCoffee == 'R' || strengthOfCoffee == 'r')))),
+              (((threeBagWeight == 250) && (numOfServings >= 1 && numOfServings <= 4)) ||
+               ((threeBagWeight == 500) && (numOfServings >= 5 && numOfServings <= 9)) ||
+               ((threeBagWeight == 1000) && (numOfServings >= 10))),
+              (((threeServeType == 'Y' || threeServeType == 'y') && (likeCream == 'Y' || likeCream == 'y')) ||
+               ((threeServeType == 'N' || threeServeType == 'n') && (likeCream == 'N' || likeCream == 'n'))));
+
+       return 0;
 }
