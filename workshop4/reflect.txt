@@ -1,0 +1,30 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #4
+Full Name  : utsav gautam
+Student ID#: 157891219
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Answer no1.
+-> Code formating is important to make my code easy to read and maintain I followed best practices for 
+conding style like using a clear and descriptive name for variables. using comments to comment out the logic and 
+its purpose. I used meaningful and concise conditional statements. I also compiled and ran the code after i complete 
+each logic so that i could catch the bugs in my program earlier.
+
+
+Answer no2.
+-> Nested logic is an imprtant feature of programming languages. If there were no nested looping it would make 
+programming more complex. Because to get the same functioning logic like loops and nested loops we would have to create
+the entire logic ourselves which would be very complex and not practical.
+
+Answer no3.
+-> If we used only if statements the code could become very hard to read and the logic would not be understandable. 
+It would be more time consuming for the reader and also to maintain the code. Adding and modifiying would also be 
+very complex if there were no if/else if statements. Each "if" statement would require the code to evaluate its condition,
+even if the previous "if" statements have already determined that the conditions are not met. If/else if.. alternative
+path makes code more readable, effiecient and maintanable than if optional path construct
