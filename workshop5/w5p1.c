@@ -98,7 +98,9 @@ int main(void)
         printf("DEC");
         break;
     }
-    printf("-%d", startDate);
+    printf("-%2d", startDate);
+     // if we were to display 01 as int it will not be displayed so using %2d we can display 01 as date
+  
     // print the date as 01 for all months which is already hold by startDate variable
 
     return 0;
