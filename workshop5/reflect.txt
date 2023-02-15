@@ -1,0 +1,30 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #5
+Full Name  : utsav gautam
+Student ID#: 157891219
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Answer no.1 
+
+We try to use variables and macros inorder to make program maintainable, understandable, readable and reusable. Use of variable 
+makes program way more readable, and we can reuse the same variable or macros again and which reduces redundancy and confusion. 
+#define MIN_YEAR 2012
+#define MAX_YEAR 2022
+#define LOG_DAYS 3
+In this code above if we wrote 2012 or 2022 in our program if someone tries to go through our code and sees the value they 
+might not get the purpose of the magic number there so instead we use macros to solve this problem. As a software or a program 
+is not only made by a individual. It is a good practice to use macros and meaningfully named variables for ease maintainability and 
+understandability of program. 
+
+Answer no.2 
+The reason the sum and average logic is placed outside of any validation routine is because we are trying to seperate each section 
+of code and make one part deal with one particular aspect. The validation routine is responsible to check whether the input data is 
+within the range or not where as the sum and average is there to calculate the data input of the user. This helps significantly in 
+modularization and code reusability. The sum and average logic outside the validation routine improves the effieciency of the code 
+ the sum and average logic are only executed after the validation of all three days is completed. If the sum and average logic were included in the validation loop, it would execute repeatedly and unnecessarily after each input validation. So the better approach for solving this problem is to place the calculations outside of the the validation routines.
