@@ -27,7 +27,7 @@ int main(void)
     // declare variables
     double getMontlyIncome;
     int numOfWishes, keepGoing, i;
-    double itemCost[] = {0.00};
+    double itemCost[MAX_NUM_ITEMS] = {0.00}; 
     int priority[MAX_NUM_ITEMS];
     char financingOption[MAX_NUM_ITEMS];
     double totalItemCost = 0.00;
