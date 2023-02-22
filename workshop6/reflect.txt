@@ -1,0 +1,22 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  : utsav gautam
+Student ID#: 157891219
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Answer no.1 
+
+There are three types of iteration that do the same thing but have different structure and syntax. Different task require us to use different type of loops though it can be performed with other loops but some specific type of 
+problems can be solved with the use of specific type of loop. While we work with arrays we prefer to use FOR loop because the for loop has a built-in mechanism for tracking the current index, making it easier to access each element in turn and is more effiecient and readable as compared to other type of loops. 
+
+Answer no.2
+For my code syntatic error was not a problem because i have some extensions installed in my visual studio code which helps with the correct syntax while writing code. For the semantic problems i tried to examine carefully the logic and meaning of my code and tested the program with inputs of various ranges that tested the logic of which the program should be built upon. 
+
+Answer no.3
+This error shown is caused due to the incorrect input by the user. While submitting through matrix the inputs are already provided in the workshop pdf so while inputting the value we must be careful and enter the exact same input or the matrix will throw error 'outputs don't match submission aborted!'
